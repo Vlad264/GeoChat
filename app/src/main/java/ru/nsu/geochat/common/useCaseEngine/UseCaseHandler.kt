@@ -26,7 +26,7 @@ class UseCaseHandler private constructor() {
     }
 
     fun <T: UseCase.ResponseValue> notifyResponse(response: T, useCaseCallback: IUseCaseCallback<T>) {
-        useCaseScheduler.onResume(response, useCaseCallback)
+        useCaseScheduler.onResponse(response, useCaseCallback)
     }
 
     fun <T: UseCase.ResponseValue> notifyError(useCaseCallback: IUseCaseCallback<T>) {

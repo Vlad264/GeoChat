@@ -27,7 +27,7 @@ class UseCaseThreadPoolScheduler : IUseCaseScheduler {
         executor.execute(runnable)
     }
 
-    override fun <T : UseCase.ResponseValue> onResume(response: T, callback: IUseCaseCallback<T>) {
+    override fun <T : UseCase.ResponseValue> onResponse(response: T, callback: IUseCaseCallback<T>) {
         handler.post {
             callback.onSuccess(response)
         }
