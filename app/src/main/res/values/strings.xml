@@ -8,4 +8,6 @@
     <string name="enter_password">Введите пароль</string>
 
     <string name="enter">Войти</string>
+
+    <string name="error_password">Пароль слишком короткий</string>
 </resources>
