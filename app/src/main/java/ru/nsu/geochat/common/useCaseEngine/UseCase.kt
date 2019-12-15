@@ -1,15 +1,16 @@
 package ru.nsu.geochat.common.useCaseEngine
 
-abstract class UseCase<RequestType: UseCase.RequestValue, ResponseType: UseCase.ResponseValue> {
+abstract class UseCase<T: UseCase.RequestValue, R: UseCase.ResponseValue> {
 
-    lateinit var requestValue: RequestValue
+    lateinit var requestValue: T
+    lateinit var useCaseCallback: IUseCaseCallback<R>
 
 
     fun run() {
         executeUseCase(requestValue)
     }
 
-    protected abstract fun executeUseCase(requestValue: RequestValue)
+    protected abstract fun executeUseCase(requestValue: T)
 
     interface RequestValue
     interface ResponseValue

@@ -19,7 +19,7 @@ class UseCaseHandler private constructor() {
     fun <T: UseCase.RequestValue, R: UseCase.ResponseValue>
             execute(useCase: UseCase<T, R>, requestValue: T, callback: IUseCaseCallback<R>) {
         useCase.requestValue = requestValue
-        //TODO add callback
+        useCase.useCaseCallback = UseCaseCallbackWrapper(callback, this)
         useCaseScheduler.execute(Runnable {
             useCase.run()
         })

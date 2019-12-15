@@ -3,7 +3,7 @@ package ru.nsu.geochat.common.useCaseEngine
 class UseCaseCallbackWrapper<T: UseCase.ResponseValue> (
     private val callback: IUseCaseCallback<T>,
     private val useCaseHandler: UseCaseHandler
-    ): IUseCaseCallback<T>{
+    ): IUseCaseCallback<T> {
 
     override fun onSuccess(response: T) {
         useCaseHandler.notifyResponse(response, callback)
