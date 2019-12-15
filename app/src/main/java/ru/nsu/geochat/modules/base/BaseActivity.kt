@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import ru.nsu.geochat.R
 
-abstract class BaseActivity(private val fragment: Fragment): AppCompatActivity() {
+abstract class BaseActivity(val fragment: Fragment): AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
