@@ -10,7 +10,8 @@ import ru.nsu.geochat.models.network.responses.LoginResponse
 
 interface ApiService {
     companion object {
-        const val SERVER_URL = "http://"
+        const val SERVER_DOMAIN = "192.168.1.111:8080"
+        const val SERVER_URL = "http://$SERVER_DOMAIN/"
 
         val instance: ApiService by lazy {
             val retrofit = Retrofit.Builder()
