@@ -1,4 +1,4 @@
-package ru.nsu.geochat.modules.activity
+package ru.nsu.geochat.modules.activity.login
 
 import android.os.Bundle
 import android.view.LayoutInflater

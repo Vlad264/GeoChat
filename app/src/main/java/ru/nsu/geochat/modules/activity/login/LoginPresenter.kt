@@ -1,6 +1,7 @@
-package ru.nsu.geochat.modules.activity
+package ru.nsu.geochat.modules.activity.login
 
-class LoginPresenter(override val view: ILoginView): ILoginPresenter {
+class LoginPresenter(override val view: ILoginView):
+    ILoginPresenter {
     override fun validatePassword(password: String): Boolean {
         return password.length > 4
     }
