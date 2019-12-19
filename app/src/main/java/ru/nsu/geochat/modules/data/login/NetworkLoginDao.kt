@@ -1,5 +1,6 @@
 package ru.nsu.geochat.modules.data.login
 
+import android.util.Log
 import retrofit2.Response
 import ru.nsu.geochat.models.network.requests.LoginRequest
 import ru.nsu.geochat.models.network.responses.LoginResponse
