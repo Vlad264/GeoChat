@@ -6,6 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
 import retrofit2.http.POST
 import ru.nsu.geochat.models.network.requests.LoginRequest
+import ru.nsu.geochat.models.network.responses.LoginResponse
 
 interface ApiService {
     companion object {
@@ -23,5 +24,5 @@ interface ApiService {
     }
 
     @POST("/login")
-    fun loginUser(@Body loginRequest: LoginRequest): Call<LoginRequest>
+    fun loginUser(@Body loginRequest: LoginRequest): Call<LoginResponse>
 }
