@@ -48,6 +48,7 @@
             <Button
                 android:id="@+id/loginButton"
                 android:text="@string/enter"
+                android:background="@drawable/button_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
