@@ -4,6 +4,6 @@ interface ILoginDao {
     fun tryLogin(name: String, password: String, callback: ITryLoginCallback)
 
     interface ITryLoginCallback {
-        fun onLogin(id: String?, token: String?)
+        fun onLogin(token: String?)
     }
 }
