@@ -1,6 +1,7 @@
 package ru.nsu.geochat.modules.activity.login
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,8 +22,8 @@ class LoginFragment: Fragment(), ILoginView {
         val view = inflater.inflate(R.layout.fragment_login, container, false)
 
         view.loginButton.setOnClickListener {
-            val login = view.loginField.toString()
-            val password = view.passwordField.toString()
+            val login = view.loginField.text.toString()
+            val password = view.passwordField.text.toString()
             when {
                 presenter.validatePassword(password) -> presenter.onLogin(login, password)
                 else -> showErrorScreen(getString(R.string.error_password))
@@ -32,7 +33,7 @@ class LoginFragment: Fragment(), ILoginView {
     }
 
     override fun onSuccessLogin() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
     }
 
     override fun showErrorScreen(message: String) {
