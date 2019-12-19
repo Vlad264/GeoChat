@@ -1,7 +1,11 @@
 package ru.nsu.geochat.modules.network
 
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Body
+import retrofit2.http.POST
+import ru.nsu.geochat.models.network.requests.LoginRequest
 
 interface ApiService {
     companion object {
@@ -17,4 +21,7 @@ interface ApiService {
             retrofit.create(ApiService::class.java)
         }
     }
+
+    @POST("/login")
+    fun loginUser(@Body loginRequest: LoginRequest): Call<LoginRequest>
 }
