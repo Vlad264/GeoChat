@@ -4,8 +4,11 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 import ru.nsu.geochat.models.network.requests.LoginRequest
+import ru.nsu.geochat.models.network.responses.ChatResponse
 import ru.nsu.geochat.models.network.responses.LoginResponse
 
 interface ApiService {
@@ -24,6 +27,9 @@ interface ApiService {
         }
     }
 
-    @POST("/login")
+    @POST("/api/login")
     fun loginUser(@Body loginRequest: LoginRequest): Call<LoginResponse>
+
+    @GET("/api/user/chat/{token}")
+    fun getChatsList(@Path("token") token: String): Call<List<ChatResponse>>
 }
