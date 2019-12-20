@@ -6,5 +6,6 @@ import ru.nsu.geochat.modules.base.IBaseView
 interface IChatView: IBaseView<IChatPresenter> {
     fun onChatLoaded(chat: List<Message>)
     fun addMessage(message: Message)
+    fun updateChat()
     fun onError()
 }
