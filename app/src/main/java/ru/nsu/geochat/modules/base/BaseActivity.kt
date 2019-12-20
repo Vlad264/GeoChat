@@ -17,7 +17,7 @@ abstract class BaseActivity(val fragment: Fragment): AppCompatActivity() {
 
     }
 
-    protected fun changeFragment(fragment: Fragment) {
+    protected fun resetFragment() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, fragment)
             .commit()
