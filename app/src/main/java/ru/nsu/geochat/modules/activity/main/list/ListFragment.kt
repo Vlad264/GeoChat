@@ -31,6 +31,11 @@ class ListFragment: Fragment(), IListView {
         return view
     }
 
+    override fun onResume() {
+        super.onResume()
+        presenter.start()
+    }
+
     override fun onListLoaded(chats: List<Chat>) {
         list.adapter = activity?.let { ListAdapter(chats, it as BaseActivity) }
     }
