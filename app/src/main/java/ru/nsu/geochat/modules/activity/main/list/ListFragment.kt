@@ -6,25 +6,32 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.fragment_list.view.*
 import ru.nsu.geochat.R
-import ru.nsu.geochat.models.Message
+import ru.nsu.geochat.models.Chat
 
 class ListFragment: Fragment(), IListView {
 
     private lateinit var presenter: IListPresenter
+    private lateinit var list: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_login, container, false)
+        val view = inflater.inflate(R.layout.fragment_list, container, false)
+
+        list = view.recyclerList
+        list.layoutManager = LinearLayoutManager(activity)
 
         return view
     }
 
-    override fun onListLoaded(chats: List<Message>) {
-
+    override fun onListLoaded(chats: List<Chat>) {
+        list.adapter = context?.let { ListAdapter(chats, it) }
     }
 
     override fun onError() {
