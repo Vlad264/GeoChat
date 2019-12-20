@@ -24,5 +24,5 @@ class ChatsList: UseCase<ChatsList.RequestValue, ChatsList.ResponseValue>() {
 
     class RequestValue: UseCase.RequestValue
 
-    class ResponseValue(chats: List<Chat>): UseCase.ResponseValue
+    class ResponseValue(val chats: List<Chat>): UseCase.ResponseValue
 }
