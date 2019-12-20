@@ -30,5 +30,6 @@ class LoginPresenter(override val view: ILoginView): ILoginPresenter {
     }
 
     override fun start() {
+        //Nothing to do
     }
 }
