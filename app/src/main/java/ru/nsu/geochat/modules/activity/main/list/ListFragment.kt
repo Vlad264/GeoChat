@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_list.view.*
 import ru.nsu.geochat.R
 import ru.nsu.geochat.models.Chat
+import ru.nsu.geochat.modules.base.BaseActivity
 
 class ListFragment: Fragment(), IListView {
 
@@ -31,7 +32,7 @@ class ListFragment: Fragment(), IListView {
     }
 
     override fun onListLoaded(chats: List<Chat>) {
-        list.adapter = context?.let { ListAdapter(chats, it) }
+        list.adapter = activity?.let { ListAdapter(chats, it as BaseActivity) }
     }
 
     override fun onError() {

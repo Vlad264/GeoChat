@@ -8,8 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_chat.view.*
 import ru.nsu.geochat.R
 import ru.nsu.geochat.models.Chat
+import ru.nsu.geochat.modules.activity.main.chat.ChatFragment
+import ru.nsu.geochat.modules.activity.main.chat.ChatPresenter
+import ru.nsu.geochat.modules.base.BaseActivity
 
-class ListAdapter(private val chats: List<Chat>, private val context: Context):
+class ListAdapter(private val chats: List<Chat>, private val activity: BaseActivity):
     RecyclerView.Adapter<ListAdapter.ChatHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatHolder {
@@ -26,7 +29,12 @@ class ListAdapter(private val chats: List<Chat>, private val context: Context):
         holder.lastMessage.text = chats[position].lastMessage
 
         holder.itemView.setOnClickListener {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            val fragment = ChatFragment()
+            val presenter = ChatPresenter(fragment)
+            fragment.setPresenter(presenter)
+            activity.supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, fragment)
+                .commit()
         }
     }
 
