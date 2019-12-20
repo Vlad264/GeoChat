@@ -9,6 +9,8 @@
 
     <string name="enter">Войти</string>
 
+    <string name="send">Отправить</string>
+
     <string name="error_password">Пароль слишком короткий</string>
     
     <string name="colon">:</string>
