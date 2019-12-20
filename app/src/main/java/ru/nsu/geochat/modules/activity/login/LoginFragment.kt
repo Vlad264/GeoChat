@@ -1,5 +1,6 @@
 package ru.nsu.geochat.modules.activity.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_login.view.*
 import ru.nsu.geochat.R
+import ru.nsu.geochat.modules.activity.main.MainActivity
 
 class LoginFragment: Fragment(), ILoginView {
 
@@ -33,7 +35,10 @@ class LoginFragment: Fragment(), ILoginView {
     }
 
     override fun onSuccessLogin() {
-        Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
+        val intent = Intent(context, MainActivity::class.java)
+        activity?.startActivity(intent)
+        activity?.finish()
+
     }
 
     override fun showErrorScreen(message: String) {
