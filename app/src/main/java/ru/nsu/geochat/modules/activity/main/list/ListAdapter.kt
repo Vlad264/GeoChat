@@ -30,7 +30,7 @@ class ListAdapter(private val chats: List<Chat>, private val activity: BaseActiv
 
         holder.itemView.setOnClickListener {
             val fragment = ChatFragment()
-            val presenter = ChatPresenter(fragment)
+            val presenter = ChatPresenter(fragment, chats[position].id)
             fragment.setPresenter(presenter)
             activity.supportFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainer, fragment)
