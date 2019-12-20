@@ -1,6 +1,6 @@
 package ru.nsu.geochat.models.network.responses
 
-data class ChatsListResponse (
+data class ChatResponse (
     val chatRoomID: String,
     val chatTitle: String,
     val lastAuthor: String,
