@@ -15,6 +15,7 @@ class Login: UseCase<Login.RequestValue, Login.ResponseValue>() {
                 override fun onLogin(token: String?) {
                     if (token != null) {
                         AuthInfo.token = token
+                        AuthInfo.name = requestValue.name
                         useCaseCallback.onSuccess(ResponseValue())
                     } else {
                         useCaseCallback.onError()
