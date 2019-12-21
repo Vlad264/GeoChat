@@ -11,9 +11,9 @@ class MainActivity: BaseActivity(ListFragment()) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val view = fragment as IListView
-        val presenter = ListPresenter(fragment)
-        view.setPresenter(presenter)
+        //val view = fragment as IListView
+        //val presenter = ListPresenter(fragment)
+        //view.setPresenter(presenter)
     }
 
 }

@@ -2,6 +2,7 @@ package ru.nsu.geochat.modules.activity.main.list
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,6 +27,7 @@ class ListFragment: Fragment(), IListView {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_list, container, false)
+        presenter = ListPresenter(this)
 
         list = view.recyclerList
         list.layoutManager = LinearLayoutManager(activity)
@@ -34,7 +36,7 @@ class ListFragment: Fragment(), IListView {
             val intent = Intent(context, CreateActivity::class.java)
             activity?.startActivity(intent)
         }
-
+        Log.i("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
         return view
     }
 
