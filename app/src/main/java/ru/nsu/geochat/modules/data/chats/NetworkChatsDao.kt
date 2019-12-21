@@ -22,7 +22,7 @@ class NetworkChatsDao: IChatsDao {
             if (body != null) {
                 val result = mutableListOf<Chat>()
                 for (c in body) {
-                    result.add(Chat(id = c.chatRoomID, title = c.chatTitle, lastAuthor = c.lastAuthor, lastMessage = c.lastMessage))
+                    result.add(Chat(id = c.chatRoomID, title = c.chatTitle, lastAuthor = c.lastAuthor, lastMessage = c.lastMessage, destination = "", description = ""))
                 }
                 callback.onChatsLoaded(result.toList())
             } else {
