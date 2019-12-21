@@ -1,4 +1,4 @@
-package ru.nsu.geochat.modules.activity.main.create
+package ru.nsu.geochat.modules.activity.create
 
 import ru.nsu.geochat.models.Chat
 

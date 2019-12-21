@@ -1,4 +1,4 @@
-package ru.nsu.geochat.modules.activity.main.create
+package ru.nsu.geochat.modules.activity.create
 
 import android.os.Bundle
 import ru.nsu.geochat.modules.base.BaseActivity

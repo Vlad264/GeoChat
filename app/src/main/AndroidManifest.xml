@@ -24,7 +24,7 @@
         </activity>
 
         <activity android:name=".modules.activity.main.MainActivity" />
-        <activity android:name=".modules.activity.main.create.CreateActivity" />
+        <activity android:name="ru.nsu.geochat.modules.activity.create.CreateActivity" />
 
     </application>
 
