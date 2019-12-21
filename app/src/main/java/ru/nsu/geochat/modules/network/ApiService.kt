@@ -11,6 +11,7 @@ import ru.nsu.geochat.models.Message
 import ru.nsu.geochat.models.network.requests.LoginRequest
 import ru.nsu.geochat.models.network.responses.ChatResponse
 import ru.nsu.geochat.models.network.responses.LoginResponse
+import ru.nsu.geochat.models.network.responses.MessageResponse
 
 interface ApiService {
     companion object {
@@ -35,5 +36,5 @@ interface ApiService {
     fun getChatsList(@Path("token") token: String): Call<List<ChatResponse>>
 
     @GET("/api/chat/allmessage/{id}")
-    fun getMessagesList(@Path("id") id: String): Call<List<Message>>
+    fun getMessagesList(@Path("id") id: String): Call<List<MessageResponse>>
 }
