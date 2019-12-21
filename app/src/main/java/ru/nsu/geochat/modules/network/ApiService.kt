@@ -7,6 +7,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
+import ru.nsu.geochat.models.Message
 import ru.nsu.geochat.models.network.requests.LoginRequest
 import ru.nsu.geochat.models.network.responses.ChatResponse
 import ru.nsu.geochat.models.network.responses.LoginResponse
@@ -32,4 +33,7 @@ interface ApiService {
 
     @GET("/api/user/chat/{token}")
     fun getChatsList(@Path("token") token: String): Call<List<ChatResponse>>
+
+    @GET("/api/chat/allmessage/{id}")
+    fun getMessagesList(@Path("id") id: String): Call<List<Message>>
 }
