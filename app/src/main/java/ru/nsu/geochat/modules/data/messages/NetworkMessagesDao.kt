@@ -20,7 +20,7 @@ class NetworkMessagesDao: IMessagesDao {
             if (body != null) {
                 val result = mutableListOf<Message>()
                 for (m in body) {
-                    result.add(Message(author = m.Sender, text = m.content))
+                    result.add(Message(author = m.sender, text = m.content))
                 }
                 callback.onMessagesLoadad(result)
             } else {
