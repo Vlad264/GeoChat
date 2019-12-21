@@ -24,6 +24,7 @@
         </activity>
 
         <activity android:name=".modules.activity.main.MainActivity" />
+        <activity android:name=".modules.activity.main.create.CreateActivity" />
 
     </application>
 
